@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graines de Partage</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Header commun -->
+  <header>
+    <div class="container header-main">
+      <div class="header-brand">
+        <svg width="32" height="32" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h1 class="text-2xl">Graines de Partage</h1>
+      </div>
+      <nav>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="catalog.html">Catalogue</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Administration</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero rounded-3xl">
+      <h2 class="text-4xl mb-6">Bienvenue chez Graines de Partage</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">
+        La ressourcerie qui donne une seconde vie aux vêtements et jouets de vos enfants ! 
+        Des trésors à petits prix pour grandir en s'amusant.
+      </p>
+      <a href="catalog.html" class="btn">Découvrir nos trésors</a>
+    </section>
+    <section>
+      <h3 class="text-3xl text-center mb-8 text-purple-600">Nos Trésors en Images</h3>
+      <div class="card-grid">
+        <a href="catalog.html?cat=vetements" class="card hoverable">
+          <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsb3RoZXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Vêtements enfants" class="card-img"/>
+          <div class="p-6 text-center">
+            <svg width="48" height="48" fill="none" stroke="#ec4899" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 4l-2 2 7 6 7-6-2-2m-1 2v13a2 2 0 01-2 2H9a2 2 0 01-2-2V6"></path></svg>
+            <h4 class="text-2xl mb-2 text-purple-700">Vêtements</h4>
+            <p class="text-gray-600">Des habits colorés et confortables pour tous les âges, de la naissance à 12 ans</p>
+          </div>
+        </a>
+        <a href="catalog.html?cat=jouets" class="card hoverable">
+          <img src="https://images.unsplash.com/photo-1754294437669-9501390c12bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHRveXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Jouets enfants" class="card-img"/>
+          <div class="p-6 text-center">
+            <svg width="48" height="48" fill="none" stroke="#38bdf8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2"></path><circle cx="9" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle></svg>
+            <h4 class="text-2xl mb-2 text-blue-700">Jouets</h4>
+            <p class="text-gray-600">Des jeux éducatifs et amusants pour stimuler l'imagination et l'apprentissage</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="valeurs rounded-3xl">
+      <h3 class="text-3xl text-center mb-8 text-orange-700">Nos Valeurs</h3>
+      <div class="valeurs-grid">
+        <div class="text-center">
+          <div class="bg-green-400 round-icon mb-4">
+            <svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 17.77L18.18 21l-1.63-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.45 4.73L5.82 21z"></path></svg>
+          </div>
+          <h4 class="text-xl mb-3 text-green-700">Seconde Vie</h4>
+          <p class="text-gray-700">Nous donnons une nouvelle chance aux objets délaissés</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-blue-400 round-icon mb-4">
+            <svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+          </div>
+          <h4 class="text-xl mb-3 text-blue-700">Solidarité</h4>
+          <p class="text-gray-700">Des prix accessibles pour toutes les familles</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-purple-400 round-icon mb-4">
+            <svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"></circle><path d="M17 11c1.66 0 3 1.34 3 3v4H5v-4c0-1.66 1.34-3 3-3"></path></svg>
+          </div>
+          <h4 class="text-xl mb-3 text-purple-700">Communauté</h4>
+          <p class="text-gray-700">Une équipe de bénévoles passionnés à votre service</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer commun -->
+  <footer>
+    <div class="container text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg width="24" height="24" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h3 class="text-xl">Graines de Partage</h3>
+      </div>
+      <p class="text-pink-200">
+        Ensemble, donnons une seconde vie aux trésors de l'enfance
+      </p>
+      <p class="text-sm text-pink-300 mt-4">
+        © 2024 Graines de Partage - Tous droits réservés
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
