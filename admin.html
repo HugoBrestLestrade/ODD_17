@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administration - Graines de Partage</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container header-main">
+      <div class="header-brand">
+        <svg width="32" height="32" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h1 class="text-2xl">Graines de Partage</h1>
+      </div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalog.html">Catalogue</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="active">Administration</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <div class="admin-banner bg-gradient rounded-2xl text-white py-8 text-center">
+      <h2 class="text-3xl mb-2">Administration</h2>
+      <p class="text-lg">Gérez le catalogue de la ressourcerie</p>
+    </div>
+    <form class="admin-form card rounded-2xl border-orange-200" autocomplete="off">
+      <div class="bg-orange-100 p-4 rounded-t-xl">
+        <div class="text-orange-700 text-xl">Ajouter un nouvel article</div>
+      </div>
+      <div class="admin-form-body">
+        <div class="admin-fields">
+          <div class="admin-field">
+            <label for="art-name">Nom de l'article</label>
+            <input class="input" id="art-name" required placeholder="Ex: T-shirt coloré">
+          </div>
+          <div class="admin-field">
+            <label for="art-price">Prix (€)</label>
+            <input class="input" id="art-price" type="number" min="1" required>
+          </div>
+          <div class="admin-field">
+            <label for="art-cat">Catégorie</label>
+            <select class="input" id="art-cat">
+              <option value="vetements">Vêtements</option>
+              <option value="jouets">Jouets</option>
+            </select>
+          </div>
+          <div class="admin-field">
+            <label for="art-age">Âge</label>
+            <select class="input" id="art-age">
+              <option>0-6 mois</option>
+              <option>6-12 mois</option>
+              <option>1-2 ans</option>
+              <option>2-4 ans</option>
+              <option>4-6 ans</option>
+              <option>6-8 ans</option>
+              <option>8-12 ans</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-field">
+          <label for="art-image">URL de l'image</label>
+          <input class="input" id="art-image" placeholder="https://...">
+        </div>
+        <div class="admin-field">
+          <label for="art-desc">Description</label>
+          <textarea class="input" id="art-desc" rows="3" placeholder="Description de l'article..."></textarea>
+        </div>
+        <button class="btn w-full" type="submit" style="background:#22c55e;color:#fff;" disabled>Ajouter l'article (démo statique)</button>
+      </div>
+    </form>
+    <div class="admin-list card rounded-2xl border-blue-200">
+      <div class="bg-blue-100 p-4 rounded-t-xl">
+        <div class="text-blue-700 text-xl">Articles existants</div>
+      </div>
+      <div class="admin-list-body">
+        <!-- Article 1 -->
+        <div class="admin-item">
+          <div class="admin-item-left">
+            <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Body coloré" class="admin-thumb"/>
+            <div>
+              <h4>Body coloré</h4>
+              <div class="admin-meta">
+                <span class="badge badge-outline badge-vetement">Vêtement</span>
+                <span>•</span>
+                <span class="badge badge-outline badge-age">0-6 mois</span>
+                <span>•</span>
+                <span class="badge badge-price">3€</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-delete" disabled>Supprimer</button>
+        </div>
+        <!-- Article 2 -->
+        <div class="admin-item">
+          <div class="admin-item-left">
+            <img src="https://images.unsplash.com/photo-1670453138643-a608e90b6bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Puzzle en bois" class="admin-thumb"/>
+            <div>
+              <h4>Puzzle en bois</h4>
+              <div class="admin-meta">
+                <span class="badge badge-outline badge-jouet">Jouet</span>
+                <span>•</span>
+                <span class="badge badge-outline badge-age">2-4 ans</span>
+                <span>•</span>
+                <span class="badge badge-price">8€</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-delete" disabled>Supprimer</button>
+        </div>
+        <!-- Article 3 -->
+        <div class="admin-item">
+          <div class="admin-item-left">
+            <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="T-shirt rigolo" class="admin-thumb"/>
+            <div>
+              <h4>T-shirt rigolo</h4>
+              <div class="admin-meta">
+                <span class="badge badge-outline badge-vetement">Vêtement</span>
+                <span>•</span>
+                <span class="badge badge-outline badge-age">4-6 ans</span>
+                <span>•</span>
+                <span class="badge badge-price">5€</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-delete" disabled>Supprimer</button>
+        </div>
+        <!-- Article 4 -->
+        <div class="admin-item">
+          <div class="admin-item-left">
+            <img src="https://images.unsplash.com/photo-1754294437669-9501390c12bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Jouets colorés" class="admin-thumb"/>
+            <div>
+              <h4>Jouets colorés</h4>
+              <div class="admin-meta">
+                <span class="badge badge-outline badge-jouet">Jouet</span>
+                <span>•</span>
+                <span class="badge badge-outline badge-age">1-2 ans</span>
+                <span>•</span>
+                <span class="badge badge-price">12€</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-delete" disabled>Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg width="24" height="24" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h3 class="text-xl">Graines de Partage</h3>
+      </div>
+      <p class="text-pink-200">
+        Ensemble, donnons une seconde vie aux trésors de l'enfance
+      </p>
+      <p class="text-sm text-pink-300 mt-4">
+        © 2025 Graines de Partage - Tous droits réservés
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

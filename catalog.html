@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catalogue - Graines de Partage</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="catalog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container header-main">
+      <div class="header-brand">
+        <svg width="32" height="32" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h1 class="text-2xl">Graines de Partage</h1>
+      </div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalog.html" class="active">Catalogue</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Administration</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <div class="catalog-banner bg-gradient rounded-2xl text-white py-8 text-center">
+      <h2 class="text-3xl mb-2">Notre Catalogue</h2>
+      <p class="text-lg">Découvrez tous nos trésors pour enfants</p>
+    </div>
+    <div class="catalog-filters">
+      <select>
+        <option selected>Toutes catégories</option>
+        <option>Vêtements</option>
+        <option>Jouets</option>
+      </select>
+      <select>
+        <option selected>Tous les âges</option>
+        <option>0-6 mois</option>
+        <option>6-12 mois</option>
+        <option>1-2 ans</option>
+        <option>2-4 ans</option>
+        <option>4-6 ans</option>
+        <option>6-8 ans</option>
+        <option>8-12 ans</option>
+      </select>
+      <button disabled class="btn" style="opacity:.7;cursor:not-allowed;">Filtrer</button>
+    </div>
+    <div class="catalog-cards">
+      <!-- Article 1 -->
+      <div class="catalog-card">
+        <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Body coloré" class="catalog-img"/>
+        <div class="catalog-card-body">
+          <div class="catalog-card-head">
+            <span class="catalog-title">Body coloré</span>
+            <span class="badge badge-price">3€</span>
+          </div>
+          <div class="catalog-badges">
+            <span class="badge badge-outline badge-vetement">Vêtement</span>
+            <span class="badge badge-outline badge-age">0-6 mois</span>
+          </div>
+          <div class="catalog-desc">Body en coton coloré, parfait pour bébé</div>
+        </div>
+      </div>
+      <!-- Article 2 -->
+      <div class="catalog-card">
+        <img src="https://images.unsplash.com/photo-1670453138643-a608e90b6bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Puzzle en bois" class="catalog-img"/>
+        <div class="catalog-card-body">
+          <div class="catalog-card-head">
+            <span class="catalog-title">Puzzle en bois</span>
+            <span class="badge badge-price">8€</span>
+          </div>
+          <div class="catalog-badges">
+            <span class="badge badge-outline badge-jouet">Jouet</span>
+            <span class="badge badge-outline badge-age">2-4 ans</span>
+          </div>
+          <div class="catalog-desc">Puzzle éducatif en bois naturel</div>
+        </div>
+      </div>
+      <!-- Article 3 -->
+      <div class="catalog-card">
+        <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="T-shirt rigolo" class="catalog-img"/>
+        <div class="catalog-card-body">
+          <div class="catalog-card-head">
+            <span class="catalog-title">T-shirt rigolo</span>
+            <span class="badge badge-price">5€</span>
+          </div>
+          <div class="catalog-badges">
+            <span class="badge badge-outline badge-vetement">Vêtement</span>
+            <span class="badge badge-outline badge-age">4-6 ans</span>
+          </div>
+          <div class="catalog-desc">T-shirt amusant pour enfant</div>
+        </div>
+      </div>
+      <!-- Article 4 -->
+      <div class="catalog-card">
+        <img src="https://images.unsplash.com/photo-1754294437669-9501390c12bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Jouets colorés" class="catalog-img"/>
+        <div class="catalog-card-body">
+          <div class="catalog-card-head">
+            <span class="catalog-title">Jouets colorés</span>
+            <span class="badge badge-price">12€</span>
+          </div>
+          <div class="catalog-badges">
+            <span class="badge badge-outline badge-jouet">Jouet</span>
+            <span class="badge badge-outline badge-age">1-2 ans</span>
+          </div>
+          <div class="catalog-desc">Ensemble de jouets éducatifs</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <svg width="24" height="24" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h3 class="text-xl">Graines de Partage</h3>
+      </div>
+      <p class="text-pink-200">
+        Ensemble, donnons une seconde vie aux trésors de l'enfance
+      </p>
+      <p class="text-sm text-pink-300 mt-4">
+        © 2025 Graines de Partage - Tous droits réservés
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

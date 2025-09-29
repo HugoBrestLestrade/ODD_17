@@ -1,0 +1,130 @@
+.bg-gradient {
+  background: linear-gradient(90deg, #f87171 0%, #f472b6 100%);
+}
+.admin-banner {
+  margin-bottom: 2rem;
+}
+.admin-form {
+  margin-bottom: 2rem;
+}
+.admin-form-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.admin-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+}
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.card {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 8px 0 #d1d5db44;
+  border: 2px solid #e2e8f0;
+  overflow: hidden;
+  transition: box-shadow 0.14s;
+}
+.card:hover { box-shadow: 0 4px 16px 0 #d1d5db77;}
+.input, select, textarea {
+  width: 100%;
+  padding: 0.6em 1em;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.65rem;
+  font-size: 1em;
+  background: #fff;
+  transition: border 0.14s;
+}
+.input:focus, select:focus, textarea:focus {
+  border-color: #a78bfa;
+}
+label { font-weight: 600; }
+.admin-list {
+  margin-top: 2rem;
+}
+.admin-list-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.admin-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #e0f2fe44 0%, #ede9fe44 100%);
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  border: 1.5px solid #e2e8f0;
+  transition: box-shadow 0.13s;
+}
+.admin-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.admin-thumb {
+  width: 3.8rem;
+  height: 3.8rem;
+  object-fit: cover;
+  border-radius: 0.7rem;
+  border: 1.3px solid #f3e8ff;
+}
+.admin-meta {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.97em;
+  margin-top: 0.18em;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.8em;
+  border-radius: 1em;
+  font-size: 0.95em;
+  font-weight: 700;
+  margin-right: 0.1em;
+}
+.badge-price {
+  background: #22c55e;
+  color: #fff;
+}
+.badge-outline {
+  background: none;
+  border: 1.5px solid;
+}
+.badge-vetement {
+  color: #9333ea;
+  border-color: #9333ea;
+  background: #f3e8ff44;
+}
+.badge-jouet {
+  color: #2563eb;
+  border-color: #2563eb;
+  background: #e0f2fe44;
+}
+.badge-age {
+  color: #0ea5e9;
+  border-color: #0ea5e9;
+  background: #bae6fd44;
+}
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 0.65rem;
+  padding: 0.6em 1.5em;
+  font-weight: bold;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+@media (max-width: 950px) {
+  .admin-fields { grid-template-columns: 1fr;}
+}

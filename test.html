@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seconde Enfance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --main-bg: linear-gradient(135deg, #fef7c3 0%, #fad7e8 50%, #c7eaff 100%);
+      --header-bg: linear-gradient(90deg, #ec4899 0%, #a78bfa 60%, #38bdf8 100%);
+      --footer-bg: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+      --btn-yellow: #fde047;
+      --btn-yellow-hover: #facc15;
+      --pink: #f472b6;
+      --purple: #a78bfa;
+      --blue: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Nunito', Arial, sans-serif;
+      background: var(--main-bg);
+      min-height: 100vh;
+      color: #222;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    header {
+      background: var(--header-bg);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(100,0,100,0.07);
+    }
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+    .header-brand {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .header-brand svg { color: #fde047; }
+    nav { display: flex; gap: 2rem; }
+    nav button {
+      background: none; border: none; color: #fff;
+      font-size: 1rem; font-weight: bold; cursor: pointer;
+      transition: color 0.2s;
+    }
+    nav button.active, nav button:hover { color: #fde047; }
+    .mobile-nav-btn {
+      display: none;
+      background: none; border: none; color: #fff;
+      font-size: 2rem; cursor: pointer;
+    }
+    .mobile-nav {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .mobile-nav-btn { display: block; }
+      .mobile-nav {
+        display: block;
+        margin-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 1rem;
+      }
+      .mobile-nav button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none; border: none; color: #fff;
+        font-size: 1.1rem; margin-bottom: 0.75rem;
+        padding: 0.5rem 0;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .mobile-nav button.active, .mobile-nav button:hover {
+        color: #fde047;
+      }
+    }
+    main {
+      min-height: 40vh;
+      padding: 3rem 0 1rem;
+    }
+    .btn {
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 999px;
+      font-size: 1.1em;
+      font-weight: bold;
+      background: var(--btn-yellow);
+      color: #111;
+      cursor: pointer;
+      box-shadow: 0 2px 8px 0 #fef7c3c0;
+      transition: background 0.18s;
+    }
+    .btn:hover { background: var(--btn-yellow-hover); }
+    .rounded-3xl { border-radius: 2.5rem; }
+    .rounded-2xl { border-radius: 1.25rem; }
+    .rounded-lg { border-radius: 0.65rem; }
+    .text-center { text-align: center; }
+    .text-xl { font-size: 1.2rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.9rem; }
+    .text-4xl { font-size: 2.3rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.8rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-16 { margin-top: 4rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .p-0 { padding: 0; }
+    .p-4 { padding: 1rem; }
+    .p-6 { padding: 1.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .space-y-12 > * + * { margin-top: 3rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .grid { display: grid; gap: 2rem; }
+    .grid-cols-2 { grid-template-columns: repeat(2,1fr);}
+    .grid-cols-3 { grid-template-columns: repeat(3,1fr);}
+    .grid-cols-4 { grid-template-columns: repeat(4,1fr);}
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-8 { gap: 2rem; }
+    .w-full { width: 100%; }
+    .w-16 { width: 64px;}
+    .h-16 { height: 64px;}
+    .h-6 { height: 24px;}
+    .w-6 { width: 24px;}
+    .h-8 { height: 32px;}
+    .w-8 { width: 32px;}
+    .h-12 { height: 48px;}
+    .w-12 { width: 48px;}
+    .object-cover { object-fit: cover; }
+    .mx-auto { margin-left: auto; margin-right: auto;}
+    .max-w-3xl { max-width: 700px;}
+    .overflow-hidden { overflow: hidden;}
+    .border-2 { border: 2px solid #e2e8f0;}
+    .border-pink-200 { border-color: #fbcfe8;}
+    .border-blue-200 { border-color: #bae6fd;}
+    .border-yellow-300 { border-color: #fde68a;}
+    .border-orange-200 { border-color: #fed7aa;}
+    .border { border: 1px solid #e2e8f0;}
+    .bg-green-400 { background-color: #4ade80;}
+    .bg-blue-400 { background-color: #38bdf8;}
+    .bg-purple-400 { background-color: #a78bfa;}
+    .bg-yellow-100 { background-color: #fef9c3;}
+    .bg-blue-100 { background-color: #e0f2fe;}
+    .bg-orange-100 { background-color: #ffedd5;}
+    .bg-pink-100 { background-color: #fde7f3;}
+    .bg-pink-500 { background-color: #ec4899;}
+    .bg-pink-600 { background-color: #db2777;}
+    .bg-yellow-200 { background-color: #fef08a;}
+    .bg-orange-200 { background-color: #fed7aa;}
+    .bg-gradient-to-r { background: linear-gradient(90deg, var(--gradient-from), var(--gradient-to)); }
+    .bg-gradient-to-br { background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to)); }
+    .text-white { color: #fff;}
+    .text-black { color: #000;}
+    .text-yellow-300 { color: #fde047;}
+    .text-pink-600 { color: #db2777;}
+    .text-pink-700 { color: #be185d;}
+    .text-pink-200 { color: #fbcfe8;}
+    .text-pink-300 { color: #f9a8d4;}
+    .text-purple-600 { color: #9333ea;}
+    .text-purple-700 { color: #7c3aed;}
+    .text-blue-600 { color: #2563eb;}
+    .text-blue-700 { color: #1d4ed8;}
+    .text-green-700 { color: #15803d;}
+    .text-orange-700 { color: #c2410c;}
+    .text-gray-600 { color: #4b5563;}
+    .text-gray-700 { color: #374151;}
+    .text-yellow-700 { color: #a16207;}
+    .text-yellow-800 { color: #854d0e;}
+    .badge {
+      display: inline-block;
+      padding: 0.25em 0.8em;
+      border-radius: 1em;
+      font-size: 0.95em;
+      font-weight: 700;
+      background: #22c55e;
+      color: #fff;
+      margin-right: 0.5em;
+    }
+    .badge-outline {
+      background: none;
+      border: 1.5px solid;
+    }
+    .badge-vetement { color: #9333ea; border-color: #9333ea;}
+    .badge-jouet { color: #2563eb; border-color: #2563eb;}
+    /* Card style */
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 8px 0 #d1d5db44;
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      transition: box-shadow 0.14s;
+    }
+    .card:hover { box-shadow: 0 4px 16px 0 #d1d5db77;}
+    .card-content { padding: 0; }
+    .card-body { padding: 1.5rem; }
+    .input, select, textarea {
+      width: 100%;
+      padding: 0.6em 1em;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.65rem;
+      font-size: 1em;
+      margin-top: 0.25rem;
+      margin-bottom: 0.2rem;
+      outline: none;
+      background: #fff;
+      transition: border 0.14s;
+    }
+    .input:focus, select:focus, textarea:focus {
+      border-color: #a78bfa;
+    }
+    label { font-weight: 600; }
+    /* Responsive */
+    @media (max-width: 950px) {
+      .grid-cols-4 { grid-template-columns: repeat(3,1fr);}
+    }
+    @media (max-width: 750px) {
+      .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2,1fr);}
+      .grid-cols-2 { grid-template-columns: 1fr;}
+      .grid { gap: 1rem;}
+    }
+    @media (max-width: 530px) {
+      .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr;}
+      main { padding: 1.5rem 0 1rem;}
+    }
+    /* Footer */
+    footer {
+      background: var(--footer-bg);
+      color: #fff;
+      margin-top: 4rem;
+      padding: 3rem 0 1.5rem 0;
+    }
+    /* Admin Delete Button */
+    .btn-delete {
+      background: #ef4444;
+      color: #fff;
+      border: none;
+      border-radius: 0.65rem;
+      padding: 0.6em 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 1rem;
+      transition: background 0.13s;
+    }
+    .btn-delete:hover { background: #dc2626; }
+    /* Hide admin on print */
+    @media print { .admin-only { display: none !important;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-main">
+      <div class="header-brand">
+        <!-- Heart icon SVG -->
+        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h1 class="text-2xl">Seconde Enfance</h1>
+      </div>
+      <nav id="desktop-nav">
+        <button data-page="home" class="active">Accueil</button>
+        <button data-page="catalog">Catalogue</button>
+        <button data-page="contact">Contact</button>
+        <button id="admin-toggle-btn">Administration</button>
+      </nav>
+      <button class="mobile-nav-btn" id="mobile-nav-btn" aria-label="Ouvrir le menu">
+        <!-- Menu SVG -->
+        <svg id="mobile-menu-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+    <div class="container mobile-nav" id="mobile-nav" style="display:none;">
+      <button data-page="home" class="active">Accueil</button>
+      <button data-page="catalog">Catalogue</button>
+      <button data-page="contact">Contact</button>
+      <button id="mobile-admin-toggle-btn">Administration</button>
+    </div>
+  </header>
+  <main class="container" id="main-content">
+    <!-- Content gets injected here via JS -->
+  </main>
+  <footer>
+    <div class="container text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <!-- Heart icon SVG -->
+        <svg width="24" height="24" fill="none" stroke="#fde047" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>
+        <h3 class="text-xl">Seconde Enfance</h3>
+      </div>
+      <p class="text-pink-200">
+        Ensemble, donnons une seconde vie aux trésors de l'enfance
+      </p>
+      <p class="text-sm text-pink-300 mt-4">
+        © 2024 Seconde Enfance - Tous droits réservés
+      </p>
+    </div>
+  </footer>
+  <script>
+    // --- DATA
+    const articles = [
+      { id: 1, name: 'Body coloré', category: 'vetements', age: '0-6mois', price: 3, image: 'https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsb3RoZXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', description: 'Body en coton coloré, parfait pour bébé' },
+      { id: 2, name: 'Puzzle en bois', category: 'jouets', age: '2-4ans', price: 8, image: 'https://images.unsplash.com/photo-1670453138643-a608e90b6bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWJ5JTIwdG95cyUyMHdvb2RlbnxlbnwxfHx8fDE3NTkxNjE0NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', description: 'Puzzle éducatif en bois naturel' },
+      { id: 3, name: 'T-shirt rigolo', category: 'vetements', age: '4-6ans', price: 5, image: 'https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsb3RoZXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', description: 'T-shirt amusant pour enfant' },
+      { id: 4, name: 'Jouets colorés', category: 'jouets', age: '1-2ans', price: 12, image: 'https://images.unsplash.com/photo-1754294437669-9501390c12bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHRveXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', description: 'Ensemble de jouets éducatifs' }
+    ];
+    let articleList = JSON.parse(localStorage.getItem('se-articles')) || articles;
+    // --- State
+    let currentPage = 'home';
+    let isAdmin = false;
+    let mobileMenuOpen = false;
+    let selectedCategory = 'all';
+    let selectedAge = 'all';
+    // --- DOM Elements
+    const main = document.getElementById('main-content');
+    const navBtns = [...document.querySelectorAll('nav button[data-page]')];
+    const mobileNavBtns = [...document.querySelectorAll('#mobile-nav button[data-page]')];
+    const adminBtn = document.getElementById('admin-toggle-btn');
+    const mobileAdminBtn = document.getElementById('mobile-admin-toggle-btn');
+    const mobileNavBtn = document.getElementById('mobile-nav-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    // --- Icon SVGs
+    const icons = {
+      shirt: `<svg width="48" height="48" fill="none" stroke="#ec4899" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 4l-2 2 7 6 7-6-2-2m-1 2v13a2 2 0 01-2 2H9a2 2 0 01-2-2V6"></path></svg>`,
+      gamepad: `<svg width="48" height="48" fill="none" stroke="#38bdf8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2"></path><circle cx="9" cy="13" r="1.5"></circle><circle cx="15" cy="13" r="1.5"></circle></svg>`,
+      star: `<svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 17.77L18.18 21l-1.63-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.45 4.73L5.82 21z"></path></svg>`,
+      users: `<svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"></circle><path d="M17 11c1.66 0 3 1.34 3 3v4H5v-4c0-1.66 1.34-3 3-3"></path></svg>`,
+      heart: `<svg width="40" height="40" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19.5 13.313l-7.314 7.314a1.75 1.75 0 01-2.474 0l-7.314-7.314a5.25 5.25 0 117.425-7.425L12 6.364l1.177-1.176a5.25 5.25 0 117.425 7.425z"></path></svg>`,
+      map: `<svg width="24" height="24" fill="none" stroke="#38bdf8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10.5c0 5.25-9 11.25-9 11.25S3 15.75 3 10.5a9 9 0 1118 0z"></path><circle cx="12" cy="10.5" r="3"></circle></svg>`,
+      phone: `<svg width="24" height="24" fill="none" stroke="#4ade80" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92V21a1 1 0 01-1.09 1A19.91 19.91 0 013 5.09 1 1 0 014 4h4.09a1 1 0 011 .75l1.13 4.52a1 1 0 01-.29 1L8.21 11.79a16 16 0 007 7l1.52-1.52a1 1 0 011-.29l4.52 1.13a1 1 0 01.75 1V16.92z"></path></svg>`,
+      mail: `<svg width="24" height="24" fill="none" stroke="#a78bfa" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10V6a2 2 0 00-2-2H5a2 2 0 00-2 2v4m16 0l-8 5-8-5"></path><path d="M21 10v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8"></path></svg>`,
+      shoppingbag: `<svg width="64" height="64" fill="none" stroke="#a3a3a3" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2l1.528 2.754A1 1 0 008.382 6H15.618a1 1 0 00.854-.246L18 2"></path><path d="M6 6h12l1.5 15H4.5L6 6z"></path><circle cx="9" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle></svg>`
+    };
+    // --- Helper
+    const ageOptions = [
+      { value: '0-6mois', label: '0-6 mois' },
+      { value: '6-12mois', label: '6-12 mois' },
+      { value: '1-2ans', label: '1-2 ans' },
+      { value: '2-4ans', label: '2-4 ans' },
+      { value: '4-6ans', label: '4-6 ans' },
+      { value: '6-8ans', label: '6-8 ans' },
+      { value: '8-12ans', label: '8-12 ans' }
+    ];
+    // --- Navigation logic
+    function setNavActive(page) {
+      navBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.page === page));
+      mobileNavBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.page === page));
+    }
+    // --- Render Pages
+    function renderHome() {
+      main.innerHTML = `
+        <div class="space-y-12">
+          <section class="bg-gradient-to-r rounded-3xl" style="--gradient-from: #4ade80; --gradient-to: #38bdf8;">
+            <div class="container px-4 text-center py-16">
+              <h2 class="text-4xl mb-6">Bienvenue chez Seconde Enfance</h2>
+              <p class="text-xl mb-8 max-w-3xl mx-auto">
+                La ressourcerie qui donne une seconde vie aux vêtements et jouets de vos enfants ! 
+                Des trésors à petits prix pour grandir en s'amusant.
+              </p>
+              <button class="btn" id="to-catalog-btn">Découvrir nos trésors</button>
+            </div>
+          </section>
+          <section>
+            <h3 class="text-3xl text-center mb-8 text-purple-600">Nos Trésors en Images</h3>
+            <div class="grid grid-cols-2 gap-8">
+              <div class="card cursor-pointer" id="cat-vetements">
+                <div class="card-content">
+                  <img src="https://images.unsplash.com/photo-1621593688179-fa4f2e1bad56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsb3RoZXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Vêtements enfants" class="w-full h-64 object-cover"/>
+                  <div class="p-6 text-center">
+                    ${icons.shirt}
+                    <h4 class="text-2xl mb-2 text-purple-700">Vêtements</h4>
+                    <p class="text-gray-600">Des habits colorés et confortables pour tous les âges, de la naissance à 12 ans</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer" id="cat-jouets">
+                <div class="card-content">
+                  <img src="https://images.unsplash.com/photo-1754294437669-9501390c12bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHRveXMlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NTkxNjE0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Jouets enfants" class="w-full h-64 object-cover"/>
+                  <div class="p-6 text-center">
+                    ${icons.gamepad}
+                    <h4 class="text-2xl mb-2 text-blue-700">Jouets</h4>
+                    <p class="text-gray-600">Des jeux éducatifs et amusants pour stimuler l'imagination et l'apprentissage</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="bg-gradient-to-r rounded-3xl" style="--gradient-from: #fef08a; --gradient-to: #fed7aa;">
+            <div class="container px-4 py-12">
+              <h3 class="text-3xl text-center mb-8 text-orange-700">Nos Valeurs</h3>
+              <div class="grid grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="bg-green-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    ${icons.star}
+                  </div>
+                  <h4 class="text-xl mb-3 text-green-700">Seconde Vie</h4>
+                  <p class="text-gray-700">Nous donnons une nouvelle chance aux objets délaissés</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-blue-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    ${icons.heart}
+                  </div>
+                  <h4 class="text-xl mb-3 text-blue-700">Solidarité</h4>
+                  <p class="text-gray-700">Des prix accessibles pour toutes les familles</p>
+                </div>
+                <div class="text-center">
+                  <div class="bg-purple-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    ${icons.users}
+                  </div>
+                  <h4 class="text-xl mb-3 text-purple-700">Communauté</h4>
+                  <p class="text-gray-700">Une équipe de bénévoles passionnés à votre service</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      `;
+      document.getElementById('to-catalog-btn').onclick = () => {currentPage = 'catalog'; setNavActive('catalog'); render();}
+      document.getElementById('cat-vetements').onclick = () => {currentPage = 'catalog'; selectedCategory = 'vetements'; setNavActive('catalog'); render();}
+      document.getElementById('cat-jouets').onclick = () => {currentPage = 'catalog'; selectedCategory = 'jouets'; setNavActive('catalog'); render();}
+    }
+    function renderCatalog() {
+      // Filtres
+      let filterHTML = `
+        <div class="flex flex-wrap gap-4 justify-center mb-6">
+          <select class="input" id="filter-cat" style="max-width:180px;">
+            <option value="all">Toutes catégories</option>
+            <option value="vetements"${selectedCategory==='vetements'?' selected':''}>Vêtements</option>
+            <option value="jouets"${selectedCategory==='jouets'?' selected':''}>Jouets</option>
+          </select>
+          <select class="input" id="filter-age" style="max-width:180px;">
+            <option value="all">Tous les âges</option>
+            ${ageOptions.map(a=>`<option value="${a.value}"${selectedAge===a.value?' selected':''}>${a.label}</option>`).join('')}
+          </select>
+        </div>
+      `;
+      let filtered = articleList.filter(a => 
+        (selectedCategory==='all'||a.category===selectedCategory)
+        &&(selectedAge==='all'||a.age===selectedAge)
+      );
+      let grid = filtered.map(a=>`
+        <div class="card rounded-2xl">
+          <div class="card-content">
+            <img src="${a.image}" alt="${a.name}" class="w-full h-48 object-cover"/>
+            <div class="p-4">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="text-lg">${a.name}</h4>
+                <span class="badge">${a.price}€</span>
+              </div>
+              <div class="flex gap-2 mb-2">
+                <span class="badge badge-outline badge-vetement">${a.category === 'vetements' ? 'Vêtement' : 'Jouet'}</span>
+                <span class="badge badge-outline badge-jouet">${ageOptions.find(x=>x.value===a.age)?.label||a.age}</span>
+              </div>
+              <p class="text-sm text-gray-600">${a.description}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      if (!filtered.length) {
+        grid = `<div class="text-center py-12">${icons.shoppingbag}<p class="text-xl text-gray-600">Aucun article trouvé avec ces filtres</p></div>`;
+      }
+      main.innerHTML = `
+        <div class="space-y-8">
+          <div class="bg-gradient-to-r rounded-2xl text-white py-8 text-center" style="--gradient-from:#22d3ee;--gradient-to:#a78bfa;">
+            <h2 class="text-3xl mb-2">Notre Catalogue</h2>
+            <p class="text-lg">Découvrez tous nos trésors pour enfants</p>
+          </div>
+          ${filterHTML}
+          <div class="grid grid-cols-4 gap-6">
+            ${grid}
+          </div>
+        </div>
+      `;
+      document.getElementById('filter-cat').onchange = e => {selectedCategory = e.target.value; render();}
+      document.getElementById('filter-age').onchange = e => {selectedAge = e.target.value; render();}
+    }
+    function renderContact() {
+      main.innerHTML = `
+        <div class="space-y-8">
+          <div class="bg-gradient-to-r rounded-2xl text-white py-8 text-center" style="--gradient-from: #4ade80; --gradient-to: #2dd4bf;">
+            <h2 class="text-3xl mb-2">Contactez-nous</h2>
+            <p class="text-lg">Venez nous rendre visite ou rejoignez notre équipe !</p>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="card rounded-2xl border-blue-200">
+              <div class="bg-blue-100 p-4 rounded-t-xl">
+                <div class="flex items-center gap-2 text-blue-700 text-xl mb-2">${icons.map}<span>Nous Trouver</span></div>
+              </div>
+              <div class="card-body space-y-4">
+                <div class="flex items-center gap-3">
+                  ${icons.map}
+                  <div>
+                    <p>123 Rue des Enfants</p>
+                    <p>75000 Paris, France</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  ${icons.phone}
+                  <p>01 23 45 67 89</p>
+                </div>
+                <div class="flex items-center gap-3">
+                  ${icons.mail}
+                  <p>contact@seconde-enfance.fr</p>
+                </div>
+                <div class="mt-6 p-4 bg-yellow-100 rounded-lg">
+                  <h4 class="text-lg mb-2 text-yellow-800">Horaires d'ouverture</h4>
+                  <div class="space-y-1 text-yellow-700">
+                    <p>Lundi - Vendredi : 9h00 - 18h00</p>
+                    <p>Samedi : 9h00 - 17h00</p>
+                    <p>Dimanche : Fermé</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="card rounded-2xl border-pink-200" id="volunteer-form" autocomplete="off">
+              <div class="bg-pink-100 p-4 rounded-t-xl">
+                <div class="flex items-center gap-2 text-pink-700 text-xl mb-2">${icons.users}<span>Rejoignez-nous comme bénévole</span></div>
+                <div class="text-pink-700">Vous souhaitez donner un peu de votre temps pour une belle cause ?</div>
+              </div>
+              <div class="card-body space-y-4">
+                <div class="space-y-2">
+                  <label for="vol-name">Nom complet</label>
+                  <input class="input border-pink-200" id="vol-name" placeholder="Votre nom" required>
+                </div>
+                <div class="space-y-2">
+                  <label for="vol-email">Email</label>
+                  <input class="input border-pink-200" id="vol-email" type="email" placeholder="votre.email@exemple.com" required>
+                </div>
+                <div class="space-y-2">
+                  <label for="vol-phone">Téléphone</label>
+                  <input class="input border-pink-200" id="vol-phone" placeholder="01 23 45 67 89">
+                </div>
+                <div class="space-y-2">
+                  <label for="vol-availability">Disponibilités</label>
+                  <select class="input border-pink-200" id="vol-availability" required>
+                    <option value="">Choisissez vos créneaux</option>
+                    <option value="weekdays">En semaine</option>
+                    <option value="weekends">Week-ends</option>
+                    <option value="flexible">Flexible</option>
+                  </select>
+                </div>
+                <div class="space-y-2">
+                  <label for="vol-message">Message</label>
+                  <textarea class="input border-pink-200" id="vol-message" placeholder="Parlez-nous de vos motivations..." rows="4"></textarea>
+                </div>
+                <button class="btn w-full bg-pink-500 text-white" style="background:#ec4899;" type="submit">Envoyer ma candidature</button>
+                <div id="vol-form-msg" style="display:none;color:#16a34a;font-weight:bold;text-align:center;">Merci pour votre envoi !</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+      document.getElementById('volunteer-form').onsubmit = e => {
+        e.preventDefault();
+        let msg = document.getElementById('vol-form-msg');
+        msg.style.display = 'block';
+        setTimeout(()=>{ msg.style.display = 'none'; e.target.reset(); }, 2800);
+      };
+    }
+    function renderAdmin() {
+      // Ajout d'article
+      main.innerHTML = `
+        <div class="space-y-8 admin-only">
+          <div class="bg-gradient-to-r rounded-2xl text-white py-8 text-center" style="--gradient-from: #f87171; --gradient-to: #f472b6;">
+            <h2 class="text-3xl mb-2">Administration</h2>
+            <p class="text-lg">Gérez le catalogue de la ressourcerie</p>
+          </div>
+          <form class="card rounded-2xl border-orange-200" id="add-article-form" autocomplete="off">
+            <div class="bg-orange-100 p-4 rounded-t-xl">
+              <div class="text-orange-700 text-xl">Ajouter un nouvel article</div>
+            </div>
+            <div class="card-body space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label for="art-name">Nom de l'article</label>
+                  <input class="input" id="art-name" required placeholder="Ex: T-shirt coloré">
+                </div>
+                <div class="space-y-2">
+                  <label for="art-price">Prix (€)</label>
+                  <input class="input" id="art-price" type="number" min="1" required>
+                </div>
+                <div class="space-y-2">
+                  <label for="art-cat">Catégorie</label>
+                  <select class="input" id="art-cat">
+                    <option value="vetements">Vêtements</option>
+                    <option value="jouets">Jouets</option>
+                  </select>
+                </div>
+                <div class="space-y-2">
+                  <label for="art-age">Âge</label>
+                  <select class="input" id="art-age">
+                    ${ageOptions.map(a=>`<option value="${a.value}">${a.label}</option>`).join('')}
+                  </select>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label for="art-image">URL de l'image</label>
+                <input class="input" id="art-image" placeholder="https://...">
+              </div>
+              <div class="space-y-2">
+                <label for="art-desc">Description</label>
+                <textarea class="input" id="art-desc" rows="3" placeholder="Description de l'article..."></textarea>
+              </div>
+              <button class="btn w-full" type="submit" style="background:#22c55e;color:#fff;">Ajouter l'article</button>
+              <div id="add-article-msg" style="display:none;color:#16a34a;font-weight:bold;text-align:center;">Article ajouté !</div>
+            </div>
+          </form>
+          <div class="card rounded-2xl border-blue-200">
+            <div class="bg-blue-100 p-4 rounded-t-xl">
+              <div class="text-blue-700 text-xl">Articles existants</div>
+            </div>
+            <div class="card-body space-y-4" id="admin-article-list">
+              <!-- liste articles admin -->
+            </div>
+          </div>
+        </div>
+      `;
+      // Liste
+      renderAdminArticleList();
+      // Ajout
+      document.getElementById('add-article-form').onsubmit = e => {
+        e.preventDefault();
+        const name = document.getElementById('art-name').value.trim();
+        const price = parseFloat(document.getElementById('art-price').value);
+        const category = document.getElementById('art-cat').value;
+        const age = document.getElementById('art-age').value;
+        const image = document.getElementById('art-image').value.trim() || 'https://via.placeholder.com/160x160?text=Image';
+        const desc = document.getElementById('art-desc').value.trim();
+        if (!name || !price || !category || !age) return;
+        const id = Math.max(0, ...articleList.map(a=>a.id))+1;
+        articleList.push({id, name, price, category, age, image, description: desc});
+        localStorage.setItem('se-articles', JSON.stringify(articleList));
+        renderAdminArticleList();
+        e.target.reset();
+        document.getElementById('add-article-msg').style.display = 'block';
+        setTimeout(()=>{document.getElementById('add-article-msg').style.display='none';}, 1800);
+      };
+    }
+    function renderAdminArticleList() {
+      const cont = document.getElementById('admin-article-list');
+      if (!cont) return;
+      cont.innerHTML = articleList.map(a=>`
+        <div class="flex items-center justify-between p-4 border rounded-lg">
+          <div class="flex items-center gap-4">
+            <img src="${a.image}" alt="${a.name}" class="w-16 h-16 object-cover rounded-lg"/>
+            <div>
+              <h4>${a.name}</h4>
+              <div class="flex gap-2 text-sm text-gray-600">
+                <span>${a.category === 'vetements' ? 'Vêtement' : 'Jouet'}</span>
+                <span>•</span>
+                <span>${ageOptions.find(x=>x.value===a.age)?.label||a.age}</span>
+                <span>•</span>
+                <span>${a.price}€</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-delete" data-id="${a.id}">Supprimer</button>
+        </div>
+      `).join('');
+      cont.querySelectorAll('.btn-delete').forEach(btn=>{
+        btn.onclick = ()=>{
+          if (confirm('Voulez-vous vraiment supprimer cet article ?')) {
+            const id = parseInt(btn.dataset.id);
+            articleList = articleList.filter(x=>x.id!==id);
+            localStorage.setItem('se-articles', JSON.stringify(articleList));
+            renderAdminArticleList();
+          }
+        };
+      });
+    }
+    // --- Render
+    function render() {
+      if (isAdmin) {
+        renderAdmin();
+      } else {
+        switch(currentPage) {
+          case 'home': renderHome(); break;
+          case 'catalog': renderCatalog(); break;
+          case 'contact': renderContact(); break;
+          default: renderHome();
+        }
+      }
+    }
+    // --- Nav events
+    navBtns.forEach(btn => btn.onclick = ()=>{
+      currentPage = btn.dataset.page;
+      isAdmin = false;
+      setNavActive(currentPage);
+      render();
+      closeMobileMenu();
+    });
+    mobileNavBtns.forEach(btn => btn.onclick = ()=>{
+      currentPage = btn.dataset.page;
+      isAdmin = false;
+      setNavActive(currentPage);
+      render();
+      closeMobileMenu();
+    });
+    adminBtn.onclick = ()=>{
+      isAdmin = !isAdmin;
+      setNavActive(isAdmin ? null : currentPage);
+      render();
+      closeMobileMenu();
+      adminBtn.textContent = isAdmin ? 'Quitter Admin' : 'Administration';
+      mobileAdminBtn.textContent = isAdmin ? 'Quitter Admin' : 'Administration';
+    };
+    mobileAdminBtn.onclick = adminBtn.onclick;
+    // --- Mobile menu
+    function closeMobileMenu() {
+      mobileNav.style.display = 'none';
+      mobileMenuOpen = false;
+      document.getElementById('mobile-menu-icon').innerHTML =
+        `<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>`;
+    }
+    function openMobileMenu() {
+      mobileNav.style.display = 'block';
+      mobileMenuOpen = true;
+      document.getElementById('mobile-menu-icon').innerHTML =
+        `<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>`;
+    }
+    mobileNavBtn.onclick = ()=>{
+      if (mobileMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    };
+    // --- Initial
+    render();
+  </script>
+</body>
+</html>
