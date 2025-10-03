@@ -53,8 +53,4 @@
   .card-grid { grid-template-columns: 1fr; }
   .valeurs-grid { grid-template-columns: 1fr; }
 }
-/* Ajout pour éviter la barre horizontale sur mobile */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
+
