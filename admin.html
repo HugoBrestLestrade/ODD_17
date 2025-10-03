@@ -1,168 +1,167 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Graines de Partage - Ressourcerie spécialisée dans la seconde vie des vêtements et jouets pour enfants. Découvrez notre catalogue, nos valeurs et nos actions pour une enfance solidaire et responsable.">
-  <title>Administration - Graines de Partage</title>
-  <link rel="stylesheet" href="shared.css">
-  <link rel="stylesheet" href="admin.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Graines de Partage - Administration de la ressourcerie : gérez le catalogue de vêtements et jouets pour enfants, ajoutez ou supprimez des articles solidairement.">
+    <title>Administration - Graines de Partage</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <header>
+<header role="banner" aria-label="En-tête principal">
     <div class="container header-main">
-      <div class="header-brand">
-        <img src="logo_gdp.webp" alt="Logo Graines de Partage" class="logo-gdp">
-        <h1 class="text-2xl">Graines de Partage</h1>
-      </div>
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="catalog.html">Catalogue</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html" class="active">Administration</a>
-      </nav>
+        <div class="header-brand">
+            <img src="logo_gdp.webp" alt="Logo Graines de Partage, ourson et jeux d'enfants" class="logo-gdp" loading="lazy">
+            <h1 class="text-2xl">Graines de Partage</h1>
+        </div>
+        <nav role="navigation" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="catalog.html">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html" class="active">Administration</a>
+        </nav>
     </div>
-  </header>
-  <main class="container">
-    <div class="admin-banner bg-gradient rounded-2xl text-white py-8 text-center">
-      <h2 class="text-3xl mb-2">Administration</h2>
-      <p class="text-lg">Gérez le catalogue de la ressourcerie</p>
+</header>
+<main class="container" role="main" aria-label="Zone d'administration">
+    <div class="admin-banner bg-gradient rounded-2xl text-white py-8 text-center" aria-label="Bannière administration">
+        <h2 class="text-3xl mb-2">Administration</h2>
+        <p class="text-lg">Gérez le catalogue de la ressourcerie</p>
     </div>
-    <form class="admin-form card rounded-2xl border-orange-200" autocomplete="off">
-      <div class="bg-orange-100 p-4 rounded-t-xl">
-        <div class="text-orange-700 text-xl">Ajouter un nouvel article</div>
-      </div>
-      <div class="admin-form-body">
-        <div class="admin-fields">
-          <div class="admin-field">
-            <label for="art-name">Nom de l'article</label>
-            <input class="input" id="art-name" required placeholder="Ex: T-shirt coloré">
-          </div>
-          <div class="admin-field">
-            <label for="art-price">Prix (€)</label>
-            <input class="input" id="art-price" type="number" min="1" required>
-          </div>
-          <div class="admin-field">
-            <label for="art-cat">Catégorie</label>
-            <select class="input" id="art-cat">
-              <option value="vetements">Vêtements</option>
-              <option value="jouets">Jouets</option>
-            </select>
-          </div>
-          <div class="admin-field">
-            <label for="art-age">Âge</label>
-            <select class="input" id="art-age">
-              <option>0-6 mois</option>
-              <option>6-12 mois</option>
-              <option>1-2 ans</option>
-              <option>2-4 ans</option>
-              <option>4-6 ans</option>
-              <option>6-8 ans</option>
-              <option>8-12 ans</option>
-            </select>
-          </div>
+    <form class="admin-form card rounded-2xl border-orange-200" autocomplete="off" aria-label="Formulaire d’ajout d’article">
+        <div class="bg-orange-100 p-4 rounded-t-xl">
+            <div class="text-orange-700 text-xl">Ajouter un nouvel article</div>
         </div>
-        <div class="admin-field">
-          <label for="art-image">URL de l'image</label>
-          <input class="input" id="art-image" placeholder="https://...">
+        <div class="admin-form-body">
+            <div class="admin-fields">
+                <div class="admin-field">
+                    <label for="art-name">Nom de l'article</label>
+                    <input class="input" id="art-name" required placeholder="Ex: T-shirt coloré">
+                </div>
+                <div class="admin-field">
+                    <label for="art-price">Prix (€)</label>
+                    <input class="input" id="art-price" type="number" min="1" required>
+                </div>
+                <div class="admin-field">
+                    <label for="art-cat">Catégorie</label>
+                    <select class="input" id="art-cat">
+                        <option value="vetements">Vêtements</option>
+                        <option value="jouets">Jouets</option>
+                    </select>
+                </div>
+                <div class="admin-field">
+                    <label for="art-age">Âge</label>
+                    <select class="input" id="art-age">
+                        <option>0-6 mois</option>
+                        <option>6-12 mois</option>
+                        <option>1-2 ans</option>
+                        <option>2-4 ans</option>
+                        <option>4-6 ans</option>
+                        <option>6-8 ans</option>
+                        <option>8-12 ans</option>
+                    </select>
+                </div>
+            </div>
+            <div class="admin-field">
+                <label for="art-image">URL de l'image</label>
+                <input class="input" id="art-image" placeholder="https://...">
+            </div>
+            <div class="admin-field">
+                <label for="art-desc">Description</label>
+                <textarea class="input" id="art-desc" rows="3" placeholder="Description de l'article..."></textarea>
+            </div>
+            <button class="btn w-full" type="submit" style="background:#22c55e;color:#fff;" disabled>Ajouter l'article (démo statique)</button>
         </div>
-        <div class="admin-field">
-          <label for="art-desc">Description</label>
-          <textarea class="input" id="art-desc" rows="3" placeholder="Description de l'article..."></textarea>
-        </div>
-        <button class="btn w-full" type="submit" style="background:#22c55e;color:#fff;" disabled>Ajouter l'article (démo statique)</button>
-      </div>
     </form>
     <div class="admin-list card rounded-2xl border-blue-200">
-      <div class="bg-blue-100 p-4 rounded-t-xl">
-        <div class="text-blue-700 text-xl">Articles existants</div>
-      </div>
-      <div class="admin-list-body">
-        <!-- Article 1 -->
-        <div class="admin-item">
-          <div class="admin-item-left">
-            <img src="vetements_enfant.webp" alt="Body coloré" class="admin-thumb" loading="lazy"/>
-            <div>
-              <h3>Vêtements chauds</h3>
-              <div class="admin-meta">
-                <span class="badge badge-outline badge-vetement">Vêtement</span>
-                <span>•</span>
-                <span class="badge badge-outline badge-age">0-6 mois</span>
-                <span>•</span>
-                <span class="badge badge-price">3€</span>
-              </div>
-            </div>
-          </div>
-          <button class="btn-delete" disabled>Supprimer</button>
+        <div class="bg-blue-100 p-4 rounded-t-xl">
+            <div class="text-blue-700 text-xl">Articles existants</div>
         </div>
-        <!-- Article 2 -->
-        <div class="admin-item">
-          <div class="admin-item-left">
-            <img src="puzzleenbois.webp" alt="Puzzle en bois" class="admin-thumb" loading="lazy"/>
-            <div>
-              <h3>Puzzle en bois</h3>
-              <div class="admin-meta">
-                <span class="badge badge-outline badge-jouet">Jouet</span>
-                <span>•</span>
-                <span class="badge badge-outline badge-age">2-4 ans</span>
-                <span>•</span>
-                <span class="badge badge-price">8€</span>
-              </div>
+        <div class="admin-list-body" aria-label="Liste des articles existants">
+            <!-- Article 1 -->
+            <div class="admin-item" aria-label="Article : Vêtements chauds, 0-6 mois, 3€">
+                <div class="admin-item-left">
+                    <img src="vetements_enfant.webp" alt="Body coloré pour bébé 0-6 mois" class="admin-thumb" loading="lazy"/>
+                    <div>
+                        <h3>Vêtements chauds</h3>
+                        <div class="admin-meta">
+                            <span class="badge badge-outline badge-vetement">Vêtement</span>
+                            <span>•</span>
+                            <span class="badge badge-outline badge-age">0-6 mois</span>
+                            <span>•</span>
+                            <span class="badge badge-price">3€</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-delete" disabled aria-label="Supprimer Vêtements chauds" tabindex="0">Supprimer</button>
             </div>
-          </div>
-          <button class="btn-delete" disabled>Supprimer</button>
-        </div>
-        <!-- Article 3 -->
-        <div class="admin-item">
-          <div class="admin-item-left">
-            <img src="tshirts_enfant.webp" alt="T-shirt rigolo" class="admin-thumb" loading="lazy"/>
-            <div>
-              <h3>T-shirts</h3>
-              <div class="admin-meta">
-                <span class="badge badge-outline badge-vetement">Vêtement</span>
-                <span>•</span>
-                <span class="badge badge-outline badge-age">4-6 ans</span>
-                <span>•</span>
-                <span class="badge badge-price">5€</span>
-              </div>
+            <!-- Article 2 -->
+            <div class="admin-item" aria-label="Article : Puzzle en bois, 2-4 ans, 8€">
+                <div class="admin-item-left">
+                    <img src="puzzleenbois.webp" alt="Puzzle éducatif en bois naturel 2-4 ans" class="admin-thumb" loading="lazy"/>
+                    <div>
+                        <h3>Puzzle en bois</h3>
+                        <div class="admin-meta">
+                            <span class="badge badge-outline badge-jouet">Jouet</span>
+                            <span>•</span>
+                            <span class="badge badge-outline badge-age">2-4 ans</span>
+                            <span>•</span>
+                            <span class="badge badge-price">8€</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-delete" disabled aria-label="Supprimer Puzzle en bois" tabindex="0">Supprimer</button>
             </div>
-          </div>
-          <button class="btn-delete" disabled>Supprimer</button>
-        </div>
-        <!-- Article 4 -->
-        <div class="admin-item">
-          <div class="admin-item-left">
-            <img src="jouets_colores.webp" alt="Jouets colorés" class="admin-thumb" loading="lazy"/>
-            <div>
-              <h3>Jouets colorés</h3>
-              <div class="admin-meta">
-                <span class="badge badge-outline badge-jouet">Jouet</span>
-                <span>•</span>
-                <span class="badge badge-outline badge-age">1-2 ans</span>
-                <span>•</span>
-                <span class="badge badge-price">12€</span>
-              </div>
+            <!-- Article 3 -->
+            <div class="admin-item" aria-label="Article : T-shirts, 4-6 ans, 5€">
+                <div class="admin-item-left">
+                    <img src="tshirts_enfant.webp" alt="T-shirts rigolos 4-6 ans" class="admin-thumb" loading="lazy"/>
+                    <div>
+                        <h3>T-shirts</h3>
+                        <div class="admin-meta">
+                            <span class="badge badge-outline badge-vetement">Vêtement</span>
+                            <span>•</span>
+                            <span class="badge badge-outline badge-age">4-6 ans</span>
+                            <span>•</span>
+                            <span class="badge badge-price">5€</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-delete" disabled aria-label="Supprimer T-shirts" tabindex="0">Supprimer</button>
             </div>
-          </div>
-          <button class="btn-delete" disabled>Supprimer</button>
+            <!-- Article 4 -->
+            <div class="admin-item" aria-label="Article : Jouets colorés, 1-2 ans, 12€">
+                <div class="admin-item-left">
+                    <img src="jouets_colores.webp" alt="Jouets colorés pour enfants 1-2 ans" class="admin-thumb" loading="lazy"/>
+                    <div>
+                        <h3>Jouets colorés</h3>
+                        <div class="admin-meta">
+                            <span class="badge badge-outline badge-jouet">Jouet</span>
+                            <span>•</span>
+                            <span class="badge badge-outline badge-age">1-2 ans</span>
+                            <span>•</span>
+                            <span class="badge badge-price">12€</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-delete" disabled aria-label="Supprimer Jouets colorés" tabindex="0">Supprimer</button>
+            </div>
         </div>
-      </div>
     </div>
-  </main>
-  <!--FOOTER-->
-  <footer>
+</main>
+<footer role="contentinfo" aria-label="Pied de page">
     <div class="container text-center">
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <img src="logo_gdp.webp" alt="Logo Graines de Partage" class="logo-gdp" loading="lazy">
-        <h3 class="text-xl">Graines de Partage</h3>
-      </div>
-      <p class="text-pink-200">
-        Ensemble, donnons une seconde vie aux trésors de l'enfance
-      </p>
-      <p class="text-sm text-pink-300 mt-4">
-        © 2025 Graines de Partage - Tous droits réservés
-      </p>
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="logo_gdp.webp" alt="Logo Graines de Partage, ourson et jeux d'enfants" class="logo-gdp" loading="lazy">
+            <h3 class="text-xl">Graines de Partage</h3>
+        </div>
+        <p class="text-pink-200">
+            Ensemble, donnons une seconde vie aux trésors de l'enfance
+        </p>
+        <p class="text-sm text-pink-300 mt-4">
+            © 2025 Graines de Partage - Tous droits réservés
+        </p>
     </div>
-  </footer>
+</footer>
 </body>
 </html>

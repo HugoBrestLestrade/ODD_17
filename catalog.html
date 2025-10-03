@@ -1,129 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Graines de Partage - Ressourcerie spécialisée dans la seconde vie des vêtements et jouets pour enfants. Découvrez notre catalogue, nos valeurs et nos actions pour une enfance solidaire et responsable.">
-  <title>Catalogue - Graines de Partage</title>
-  <link rel="stylesheet" href="shared.css">
-  <link rel="stylesheet" href="catalog.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Graines de Partage - Découvrez notre catalogue de vêtements et jouets d'occasion pour enfants, soigneusement sélectionnés pour une seconde vie solidaire et responsable.">
+    <title>Catalogue - Graines de Partage</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="catalog.css">
 </head>
 <body>
-  <header>
+<header role="banner" aria-label="En-tête principal">
     <div class="container header-main">
-      <div class="header-brand">
-        <img src="logo_gdp.webp" alt="Logo Graines de Partage" class="logo-gdp" loading="lazy">
-        <h1 class="text-2xl">Graines de Partage</h1>
-      </div>
-      <nav>
-        <a href="index.html">Accueil</a>
-        <a href="catalog.html" class="active">Catalogue</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html">Administration</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-    <div class="catalog-banner bg-gradient rounded-2xl text-white py-8 text-center">
-      <h2 class="text-3xl mb-2">Notre Catalogue</h2>
-      <p class="text-lg">Découvrez tous nos trésors pour enfants</p>
-    </div>
-    <div class="catalog-filters">
-      <select>
-        <option selected>Toutes catégories</option>
-        <option>Vêtements</option>
-        <option>Jouets</option>
-      </select>
-      <select>
-        <option selected>Tous les âges</option>
-        <option>0-6 mois</option>
-        <option>6-12 mois</option>
-        <option>1-2 ans</option>
-        <option>2-4 ans</option>
-        <option>4-6 ans</option>
-        <option>6-8 ans</option>
-        <option>8-12 ans</option>
-      </select>
-      <button disabled class="btn" style="opacity:.7;cursor:not-allowed;">Filtrer</button>
-    </div>
-    <div class="catalog-cards">
-      <!-- Article 1 -->
-      <div class="catalog-card">
-        <img src="vetements_enfant.webp" alt="Body coloré" class="catalog-img"/>
-        <div class="catalog-card-body">
-          <div class="catalog-card-head">
-            <span class="catalog-title">Vêtements chauds</span>
-            <span class="badge badge-price">3€</span>
-          </div>
-          <div class="catalog-badges">
-            <span class="badge badge-outline badge-vetement">Vêtement</span>
-            <span class="badge badge-outline badge-age">0-6 mois</span>
-          </div>
-          <div class="catalog-desc">Body en coton coloré, parfait pour bébé</div>
+        <div class="header-brand">
+            <img src="logo_gdp.webp" alt="Logo Graines de Partage, ourson et jeux d'enfants" class="logo-gdp" loading="lazy">
+            <h1 class="text-2xl">Graines de Partage</h1>
         </div>
-      </div>
-      <!-- Article 2 -->
-      <div class="catalog-card">
-        <img src="puzzleenbois.webp" class="catalog-img"/>
-        <div class="catalog-card-body">
-          <div class="catalog-card-head">
-            <span class="catalog-title">Puzzle en bois</span>
-            <span class="badge badge-price">8€</span>
-          </div>
-          <div class="catalog-badges">
-            <span class="badge badge-outline badge-jouet">Jouet</span>
-            <span class="badge badge-outline badge-age">2-4 ans</span>
-          </div>
-          <div class="catalog-desc">Puzzle éducatif en bois naturel</div>
-        </div>
-      </div>
-      <!-- Article 3 -->
-      <div class="catalog-card">
-        <img src="tshirts_enfant.webp" alt="T-shirt rigolo" class="catalog-img"/>
-        <div class="catalog-card-body">
-          <div class="catalog-card-head">
-            <span class="catalog-title">T-shirts</span>
-            <span class="badge badge-price">5€</span>
-          </div>
-          <div class="catalog-badges">
-            <span class="badge badge-outline badge-vetement">Vêtement</span>
-            <span class="badge badge-outline badge-age">4-6 ans</span>
-          </div>
-          <div class="catalog-desc">T-shirts enfant</div>
-        </div>
-      </div>
-      <!-- Article 4 -->
-      <div class="catalog-card">
-        <img src="jouets_colores.webp" alt="Jouets colorés" class="catalog-img"/>
-        <div class="catalog-card-body">
-          <div class="catalog-card-head">
-            <span class="catalog-title">Jouets colorés</span>
-            <span class="badge badge-price">12€</span>
-          </div>
-          <div class="catalog-badges">
-            <span class="badge badge-outline badge-jouet">Jouet</span>
-            <span class="badge badge-outline badge-age">1-2 ans</span>
-          </div>
-          <div class="catalog-desc">Ensemble de jouets éducatifs</div>
-        </div>
-      </div>
+        <nav role="navigation" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="catalog.html" class="active">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Administration</a>
+        </nav>
     </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
+</header>
+<main class="container" role="main" aria-label="Contenu principal">
+    <div class="catalog-banner bg-gradient rounded-2xl text-white py-8 text-center" aria-label="Bannière catalogue">
+        <h2 class="text-3xl mb-2">Notre Catalogue</h2>
+        <p class="text-lg">Découvrez tous nos trésors pour enfants</p>
+    </div>
+    <div class="catalog-filters" aria-label="Filtres du catalogue">
+        <select aria-label="Filtrer par catégorie">
+            <option selected>Toutes catégories</option>
+            <option>Vêtements</option>
+            <option>Jouets</option>
+        </select>
+        <select aria-label="Filtrer par tranche d'âge">
+            <option selected>Tous les âges</option>
+            <option>0-6 mois</option>
+            <option>6-12 mois</option>
+            <option>1-2 ans</option>
+            <option>2-4 ans</option>
+            <option>4-6 ans</option>
+            <option>6-8 ans</option>
+            <option>8-12 ans</option>
+        </select>
+        <button disabled class="btn" style="opacity:.7;cursor:not-allowed;" aria-label="Appliquer le filtre">Filtrer</button>
+    </div>
+    <div class="catalog-cards" aria-label="Liste des articles">
+        <!-- Article 1 -->
+        <div class="catalog-card" aria-label="Article : Vêtements chauds, 0-6 mois, 3€">
+            <img src="vetements_enfant.webp" alt="Body coloré pour bébé 0-6 mois" class="catalog-img" loading="lazy"/>
+            <div class="catalog-card-body">
+                <div class="catalog-card-head">
+                    <span class="catalog-title">Vêtements chauds</span>
+                    <span class="badge badge-price">3€</span>
+                </div>
+                <div class="catalog-badges">
+                    <span class="badge badge-outline badge-vetement">Vêtement</span>
+                    <span class="badge badge-outline badge-age">0-6 mois</span>
+                </div>
+                <div class="catalog-desc">Body en coton coloré, parfait pour bébé</div>
+            </div>
+        </div>
+        <!-- Article 2 -->
+        <div class="catalog-card" aria-label="Article : Puzzle en bois, 2-4 ans, 8€">
+            <img src="puzzleenbois.webp" alt="Puzzle éducatif en bois naturel 2-4 ans" class="catalog-img" loading="lazy"/>
+            <div class="catalog-card-body">
+                <div class="catalog-card-head">
+                    <span class="catalog-title">Puzzle en bois</span>
+                    <span class="badge badge-price">8€</span>
+                </div>
+                <div class="catalog-badges">
+                    <span class="badge badge-outline badge-jouet">Jouet</span>
+                    <span class="badge badge-outline badge-age">2-4 ans</span>
+                </div>
+                <div class="catalog-desc">Puzzle éducatif en bois naturel</div>
+            </div>
+        </div>
+        <!-- Article 3 -->
+        <div class="catalog-card" aria-label="Article : T-shirts, 4-6 ans, 5€">
+            <img src="tshirts_enfant.webp" alt="T-shirt rigolo 4-6 ans" class="catalog-img" loading="lazy"/>
+            <div class="catalog-card-body">
+                <div class="catalog-card-head">
+                    <span class="catalog-title">T-shirts</span>
+                    <span class="badge badge-price">5€</span>
+                </div>
+                <div class="catalog-badges">
+                    <span class="badge badge-outline badge-vetement">Vêtement</span>
+                    <span class="badge badge-outline badge-age">4-6 ans</span>
+                </div>
+                <div class="catalog-desc">T-shirts enfant</div>
+            </div>
+        </div>
+        <!-- Article 4 -->
+        <div class="catalog-card" aria-label="Article : Jouets colorés, 1-2 ans, 12€">
+            <img src="jouets_colores.webp" alt="Ensemble de jouets éducatifs 1-2 ans" class="catalog-img" loading="lazy"/>
+            <div class="catalog-card-body">
+                <div class="catalog-card-head">
+                    <span class="catalog-title">Jouets colorés</span>
+                    <span class="badge badge-price">12€</span>
+                </div>
+                <div class="catalog-badges">
+                    <span class="badge badge-outline badge-jouet">Jouet</span>
+                    <span class="badge badge-outline badge-age">1-2 ans</span>
+                </div>
+                <div class="catalog-desc">Ensemble de jouets éducatifs</div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- FOOTER -->
+<footer role="contentinfo" aria-label="Pied de page">
     <div class="container text-center">
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <img src="logo_gdp.webp" alt="Logo Graines de Partage" class="logo-gdp" loading="lazy">
-        <h3 class="text-xl">Graines de Partage</h3>
-      </div>
-      <p class="text-pink-200">
-        Ensemble, donnons une seconde vie aux trésors de l'enfance
-      </p>
-      <p class="text-sm text-pink-300 mt-4">
-        © 2025 Graines de Partage - Tous droits réservés
-      </p>
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="logo_gdp.webp" alt="Logo Graines de Partage, ourson et jeux d'enfants" class="logo-gdp" loading="lazy">
+            <h3 class="text-xl">Graines de Partage</h3>
+        </div>
+        <p class="text-pink-200">
+            Ensemble, donnons une seconde vie aux trésors de l'enfance
+        </p>
+        <p class="text-sm text-pink-300 mt-4">
+            © 2025 Graines de Partage - Tous droits réservés
+        </p>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
