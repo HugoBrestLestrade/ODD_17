@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin.html
+Allow: /catalog.html
+Allow: /contact.html
+Allow: /index.html
+
+Sitemap: https://secondeenfance.alwaysdata.net/sitemap.xml
