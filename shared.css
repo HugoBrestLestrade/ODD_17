@@ -1,12 +1,13 @@
 :root {
-    --main-bg: linear-gradient(135deg, #fef7c3 0%, #fad7e8 50%, #c7eaff 100%);
-    --header-bg: linear-gradient(90deg, #ec4899 0%, #a78bfa 60%, #38bdf8 100%);
-    --footer-bg: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
-    --btn-yellow: #fde047;
-    --btn-yellow-hover: #facc15;
-    --pink: #f472b6;
-    --purple: #a78bfa;
-    --blue: #38bdf8;
+    --main-bg: #f7f7fa; /* Fond très clair */
+    --header-bg: linear-gradient(90deg, #4a90e2 0%, #e76b8d 100%);
+    --footer-bg: linear-gradient(90deg, #e76b8d 0%, #4a90e2 100%);
+    --card-bg: #fff;
+    --main-brown: #8a5a43; /* Pour les titres */
+    --soft-black: #222;
+    --btn-bg: #4a90e2;
+    --btn-bg-hover: #e76b8d;
+    --badge-bg: #f7f7fa;
 }
 * { box-sizing: border-box; }
 html, body {
